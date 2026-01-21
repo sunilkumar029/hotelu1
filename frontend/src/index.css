@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--app-bg, #f7f7f8);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select,
+textarea {
+  @apply border border-gray-300 rounded-lg px-4 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-200;
+}
+
+button {
+  @apply transition duration-200;
+}
+
+/* Theme variables and utility classes */
+:root {
+  --primary-start: #fb923c; /* orange-400 */
+  --primary-end: #ef4444; /* red-500 */
+  --accent: #f97316;
+  --app-bg: #f7faf9;
+  --sidebar-bg: #0f1724; /* dark navy */
+  --sidebar-muted: #94a3b8;
+}
+
+.primary-gradient {
+  background-image: linear-gradient(
+    90deg,
+    var(--primary-start),
+    var(--primary-end)
+  );
+}
+
+.btn-gradient {
+  @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-white font-bold shadow-md;
+  background-image: linear-gradient(
+    90deg,
+    var(--primary-start),
+    var(--primary-end)
+  );
+}
+
+.btn-primary {
+  @apply w-full text-white font-bold py-3 rounded-lg text-xl shadow-md;
+  background-image: linear-gradient(
+    90deg,
+    var(--primary-start),
+    var(--primary-end)
+  );
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.sidebar-bg {
+  background-color: var(--sidebar-bg);
+}
+
+.sidebar-muted {
+  color: var(--sidebar-muted);
+}
